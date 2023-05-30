@@ -8,6 +8,12 @@ type CheckProps = {
   onClick?: () => void;
 };
 
+const StyledLabel = styled.div<CheckProps>`
+  padding-left: 0.5rem;
+  color: ${({ isChecked }) => (isChecked ? "var(--white)" : "var(--black)")};
+  cursor: pointer;
+`;
+
 const StyledCheckBox = styled.li<CheckProps>`
   display: flex;
   flex-direction: row;
@@ -17,12 +23,6 @@ const StyledCheckBox = styled.li<CheckProps>`
   background-color: ${({ isChecked }) =>
     isChecked ? "var(--green)" : "transparent"};
   padding: 0.5rem;
-  cursor: pointer;
-`;
-
-const StyledLabel = styled.div<CheckProps>`
-  padding-left: 0.5rem;
-  color: ${({ isChecked }) => (isChecked ? "var(--white)" : "var(--black)")};
   cursor: pointer;
 `;
 
